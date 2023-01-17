@@ -1,6 +1,5 @@
 package BALWAN.Items;
 
-import BALWAN.Color;
 import BALWAN.Point2D;
 import org.opencv.core.Mat;
 import org.opencv.core.MatOfPoint;
@@ -10,10 +9,11 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Triangle extends Shape{
+    private static Triangle INSTANCE;
     private Point2D p1;
     private Point2D p2;
     private Point2D p3;
-    public Triangle(boolean filled, Point2D p1, Point2D p2, Point2D p3, Color color) {
+    private Triangle(boolean filled, Point2D p1, Point2D p2, Point2D p3, Color color) {
         super(p1, filled, color);
         this.p1 = p1;
         this.p2 = p2;
@@ -23,6 +23,13 @@ public class Triangle extends Shape{
         list.add(p2);
         list.add(p3);
         updateBoundingBox(list);
+    }
+
+    public static Triangle getInstance(boolean filled, Point2D p1, Point2D p2, Point2D p3, Color color)
+    {
+        if (INSTANCE == null)
+            INSTANCE = new Triangle(filled, p1, p2, p3, color);
+        return INSTANCE;
     }
 
     @Override

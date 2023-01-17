@@ -1,6 +1,5 @@
 package BALWAN.Items;
 
-import BALWAN.Color;
 import BALWAN.Point2D;
 
 public abstract class Primitive extends Item {
