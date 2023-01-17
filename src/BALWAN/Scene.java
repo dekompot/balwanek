@@ -19,6 +19,9 @@ public class Scene {
 
     List<Drawable> items;
     List<String> names;
+    public static final int xScene = 1920;
+    public static final int yScene = 1080;
+    public static final Scalar sceneColor = Color.BLACK.get();
 
     public Scene() {
         items = new LinkedList<>();
@@ -28,7 +31,7 @@ public class Scene {
     public void draw()
     {
         System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
-        Mat image = new Mat(1080, 1920, CvType.CV_8UC3, new Scalar(40, 40, 40));
+        Mat image = new Mat(yScene, xScene, CvType.CV_8UC3, sceneColor);
         Scanner in = new Scanner(System.in);
         String s;
         for (int i = 0 ; i < items.size() ; i++)
