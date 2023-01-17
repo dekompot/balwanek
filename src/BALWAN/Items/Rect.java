@@ -24,7 +24,11 @@ public class Rect extends Shape{
         int thickness = 2;
         if (isFilled())
             thickness = -1;
-        Imgproc.rectangle(image, getPosition().getPoint(), getBoundingBox().getBottom_right().getPoint(), color.get(), thickness);
+        Imgproc.rectangle(image,
+                getPosition().getPoint(),
+                getBoundingBox().getBottom_right().getPoint(),
+                color.get(),
+                thickness);
         return image;
     }
 }

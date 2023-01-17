@@ -7,7 +7,7 @@ import org.opencv.core.Mat;
 
 import java.util.List;
 
-public abstract class Item implements Translationable {
+public abstract class Item implements Drawable {
     private Point2D position;
     private BoundingBox boundingBox;
 
